@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV DJ SOUND</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+}
+
+header{
+background:#111;
+padding:20px;
+text-align:center;
+border-bottom:2px solid #d4af37;
+}
+
+.logo{
+font-size:40px;
+font-weight:bold;
+color:#d4af37;
+text-shadow:0 0 15px #ffd700;
+}
+
+.owner{
+margin-top:10px;
+font-size:18px;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+color:#d4af37;
+}
+
+.hero p{
+margin-top:15px;
+font-size:20px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:12px 25px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+section{
+padding:50px 20px;
+}
+
+.title{
+text-align:center;
+color:#d4af37;
+margin-bottom:30px;
+font-size:35px;
+}
+
+.card{
+background:#151515;
+padding:20px;
+margin:15px auto;
+max-width:900px;
+border:1px solid #d4af37;
+border-radius:10px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+background:#d4af37;
+color:black;
+padding:12px 25px;
+border:none;
+cursor:pointer;
+font-weight:bold;
+}
+
+#result{
+margin-top:20px;
+font-size:24px;
+color:#ffd700;
+}
+
+footer{
+background:#111;
+padding:20px;
+text-align:center;
+border-top:2px solid #d4af37;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">DEV DJ SOUND</div>
+<div class="owner">Owner : Dev Saini</div>
+</header>
+
+<div class="hero">
+<h1>Professional DJ & Sound Service</h1>
+<p>Wedding • Birthday • DJ Night • Stage Show</p>
+
+<a href="tel:7494971688" class="btn">Call Now</a>
+<a href="https://wa.me/917494971688" class="btn">WhatsApp</a>
+</div>
+
+<section>
+<h2 class="title">About Us</h2>
+
+<div class="card">
+DEV DJ SOUND provides professional DJ and sound services for all types of events with high-quality sound systems and reliable service.
+</div>
+</section>
+
+<section>
+<h2 class="title">Price Calculator</h2>
+
+<div class="card">
+
+<label>Distance (KM)</label>
+<input type="number" id="km">
+
+<label>Duration (Hours)</label>
+<input type="number" id="hours">
+
+<button onclick="calculate()">Calculate Price</button>
+
+<div id="result"></div>
+
+</div>
+</section>
+
+<section>
+<h2 class="title">Services</h2>
+
+<div class="card">
+🔊 DJ Sound Setup
+</div>
+
+<div class="card">
+🎤 Stage Sound
+</div>
+
+<div class="card">
+💡 Lighting Setup
+</div>
+
+<div class="card">
+🎉 Wedding DJ
+</div>
+
+<div class="card">
+🎂 Birthday Party DJ
+</div>
+
+</section>
+
+<section>
+<h2 class="title">Contact</h2>
+
+<div class="card">
+<b>Dev Saini</b><br><br>
+📞 7494971688<br>
+💬 WhatsApp: 7494971688<br>
+📍 Siswal, Hisar, Haryana
+</div>
+
+</section>
+
+<footer>
+© 2026 DEV DJ SOUND | All Rights Reserved
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917494971688">
+WhatsApp
+</a>
+
+<script>
+function calculate(){
+
+let km = parseFloat(document.getElementById('km').value) || 0;
+let hours = parseFloat(document.getElementById('hours').value) || 0;
+
+let price = 2500;
+
+if(km > 8){
+price += (km - 8) * 20;
+}
+
+if(hours > 3){
+price += (hours - 3) * 500;
+}
+
+document.getElementById('result').innerHTML =
+"Estimated Price : ₹" + price;
+}
+</script>
+
+</body>
+</html>
